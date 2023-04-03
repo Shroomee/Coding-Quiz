@@ -1,3 +1,26 @@
 *{
     
 }
+
+#startBtn {
+    margin-left: 5%;
+}
+#welcome {
+    margin-left: 5%;
+}
+
+#noTime {
+    display: none;
+}
+
+#questionBox {
+    display: none;
+}
+
+#rightOrWrong {
+    display: none;
+}
+
+#scoresSection {
+    display: none;
+}
