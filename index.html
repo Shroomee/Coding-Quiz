@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 
+
 </head>
+
+<!--Body-->
 <body>
-    <header>
-        <div>
-            <button>High score list</button>
-        </div>
-        <div>
-            <h2>Time:<span id="countdown"></span></h2>
+    <header class="container-fluid">
+        <div class="row">
+        <!--Div for highscore btn-->
+            <div class="col text-left">
+                <button id="highscoreBtn">High score list</button>
+            </div>
+        <!--Div for countdown-->
+            <div id="countdown" class="col text-right">
+                <h2>Time:<span id="timeLeft"></span></h2>
+            </div>
+        <!--Div for when time runs out-->
+            <div id="noTime">TIME'S UP</div>
         </div>
     </header>
 
-    <main id="container">
+    <!--main content-->
+    <main>
         <div id="gridbox">
             <h3 id="welcome">Weclome to the Coding Quiz</h3>
             <h4 id="finalscore"></h4>
