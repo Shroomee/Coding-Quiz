@@ -1,6 +1,19 @@
-//get element by ids 
+//variables to pull from
+var start = document.getElementById("start");
+var startBtn = document.getElementById("startBtn");
 var countdown = document.getElementById("countdown");
-var timeLeft = document.getElementById("timeLeft")
+var timeLeft = document.getElementById("timeLeft");
+var noTime = document.getElementById("noTime");
+var questionBox = document.getElementById("questionBox");
+var actualQuestion = document.getElementById("actualQuestion");
+var answers = document.getElementById("answers");
+var answer1 = document.getElementById("answer1");
+var answer2 = document.getElementById("answer2");
+var answer3 = document.getElementById("answer3");
+var answer4 = document.getElementById("answer4");
+var rightorwrong = document.getElementById("rightOrWrong");
+
+
 
 
 //Array of questions to pull from 
@@ -31,5 +44,23 @@ var questions = [{
 }
 ]
 
-//get element by ids for timers
-var ti
+
+//Timer
+
+
+
+//append the questions
+
+
+
+//event listeners
+
+
+
+//right or wrong
+
+
+
+//game is done
+
+
