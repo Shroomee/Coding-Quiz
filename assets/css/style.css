@@ -14,7 +14,7 @@
 }
 
 #questionBox {
-    display: none;
+    display: block;
 }
 
 #rightOrWrong {

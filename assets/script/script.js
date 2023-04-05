@@ -13,9 +13,10 @@ var answer3 = document.getElementById("answer3");
 var answer4 = document.getElementById("answer4");
 var rightorwrong = document.getElementById("rightOrWrong");
 
-
-
-
+var score = 0;
+var timeLeft = 60;
+var timerinterval;
+var questionIndex = 0;
 //Array of questions to pull from 
 var questions = [{
     question: "What is the the language you use for a stylesheet called?",
@@ -41,20 +42,57 @@ var questions = [{
     question: "What is a tool to manipulate code called?",
     options: ["a. vscode", "b. google", "c. youtube", "d. dorito"],
     answer: "a"
-}
+},
 ]
 
 
-//Timer
+//function Start quiz
+
+
+
+function startQuiz () {
+    //Hide button
+    startBtn.style.display = "none"
+    //start timer
+    timerinterval = setInterval(() => {
+        timeLeft--;
+        countdown.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            quizEnd();
+        };
+    }
+    ,1000);
+    
+    runQuestions()
+};
+
 
 
 
 //append the questions
+function runQuestions() {
+    const currentQuestion = questions[questionIndex];
+    actualQuestion.textContent = currentQuestion.question;
+    //Answer choices for loop and create buttom elements for each
+    answer1.innerHTML = '';
+    for(let i = 0; i < currentQuestion.options.length; i++) {
+        var answerChoices = currentQuestion.options[i];
+        var answerChoicesEl = document.createElement('button');
+        answerChoicesEl.textContent = answerChoices;
+        //event listener for choice with click that also runs to check if answer or right or wrong
+        answerChoicesEl.addEventListener('click', () => {
+            rightorwrong(answerChoices);
+        })
+        answer1.appendChild(answerChoicesEl);
+    }
+}
 
+function rightOrWrong() {
 
+}
 
 //event listeners
-
+startBtn.addEventListener("click", startQuiz)
 
 
 //right or wrong
