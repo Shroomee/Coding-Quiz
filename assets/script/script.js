@@ -15,7 +15,7 @@ var rightorwrong = document.getElementById("rightOrWrong");
 
 var score = 0;
 var timeLeft = 60;
-var timerinterval;
+var timerInterval;
 var questionIndex = 0;
 //Array of questions to pull from 
 var questions = [{
@@ -81,21 +81,51 @@ function runQuestions() {
         answerChoicesEl.textContent = answerChoices;
         //event listener for choice with click that also runs to check if answer or right or wrong
         answerChoicesEl.addEventListener('click', () => {
-            rightorwrong(answerChoices);
+            rightOrWrong(answerChoices);
         })
         answer1.appendChild(answerChoicesEl);
     }
 }
 
-function rightOrWrong() {
+//right or wrong function
 
+function rightOrWrong(answer) {
+    const currentQuestion = questions[questionIndex];
+    //if else for if question is right or not add to score or take away time
+        if (answer === currentQuestion.answer) {
+            score++;
+        }else {
+            timeLeft -= 10;
+        }
+    questionIndex++;
+    // if else for if youre done with the quiz or not
+        if (questionIndex >= questions.length) {
+            quizEnd();
+        }else {
+            runQuestions();
+        }
+}
+
+//function for ending the game
+
+function quizEnd() {
+    clearInterval(timerInterval);
+    actualQuestion.textContent = "Game over! put your intials down below!";
+    // answers.style.display = "none";
+    answers.innerHTML = "<input type= 'text'></input>"
+}
+
+// function to save initials and score
+
+function save() {
+    const initials = document.querySelector('input').value
+    //local storage
 }
 
 //event listeners
 startBtn.addEventListener("click", startQuiz)
 
 
-//right or wrong
 
 
 
