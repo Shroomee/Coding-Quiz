@@ -12,6 +12,8 @@ var answer2 = document.getElementById("answer2");
 var answer3 = document.getElementById("answer3");
 var answer4 = document.getElementById("answer4");
 var rightorwrong = document.getElementById("rightOrWrong");
+var saveButton =document.getElementById("save");
+
 
 var score = 0;
 var timeLeft = 60;
@@ -112,23 +114,27 @@ function quizEnd() {
     clearInterval(timerInterval);
     actualQuestion.textContent = "Game over! put your intials down below!";
     // answers.style.display = "none";
-    answers.innerHTML = "<input type= 'text'></input>"
+    answers.innerHTML = "<input type= 'text'></input>";
+    saveButton.style.display = "block";
 }
 
 // function to save initials and score
 
 function save() {
-    const initials = document.querySelector('input').value
-    //local storage
+     //local storage
+    const initials = document.querySelector('input').value;
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", score);
+    
 }
 
 //event listeners
 startBtn.addEventListener("click", startQuiz)
+saveButton.addEventListener("click")
 
 
 
 
 
-//game is done
 
 
