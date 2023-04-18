@@ -130,7 +130,7 @@ function save() {
 
 //event listeners
 startBtn.addEventListener("click", startQuiz)
-saveButton.addEventListener("click")
+saveButton.addEventListener("click", save)
 
 
 
