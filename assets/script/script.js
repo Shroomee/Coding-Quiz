@@ -139,9 +139,9 @@ function save() {
 //function for showing highscores
 
 function showHighScores() {
-    var pullInitals = JSON.parse(localStorage.setItem("initials", initials));
-    var pullScore = json.parse(localStorage.setItem("score", score));
-
+    var pullInitals = JSON.parse(localStorage.getItem("initials", initials));
+    var pullScore = json.parse(localStorage.getItem("score", score));
+    
     for (let i=0; i< pullInitals.length; i++) {
         highscore.textContent = pullInitals[i].initials;
     }
